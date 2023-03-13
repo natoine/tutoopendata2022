@@ -4,9 +4,25 @@ var express = require('express');
 var app = express();
 const http = require('http');
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 const port = process.env.PORT || 3000;
 
 var fetch = require('node-fetch');
+
+
+
+app.post("/annotation", function(req, res){
+    console.log("post");
+    var body = req.body;
+    console.log("body : ", body);
+    res.status(200);
+})
+
+
+
+
 
 app.get("/fetchair/shangai", function (req, res) {
     let url = "http://api.waqi.info/feed/shangai/?token=demo";
