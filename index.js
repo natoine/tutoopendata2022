@@ -11,12 +11,12 @@ const port = process.env.PORT || 3000;
 
 var fetch = require('node-fetch');
 
-
+var annotations = [];
 
 app.post("/annotation", function(req, res){
     console.log("post");
     var body = req.body;
-    console.log("body : ", body);
+    console.log("commentaire : ", body.commentaire);
     res.status(200);
 })
 
